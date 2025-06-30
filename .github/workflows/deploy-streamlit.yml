@@ -29,14 +29,10 @@ jobs:
 
       - name: Configure Snowflake CLI
         env:
-          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWCLI_PW }}
+          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PW }}
         run: |
-          echo "Password length is: ${#SNOWFLAKE_PASSWORD}"  # debug check, prints length of password
           mkdir -p ~/.snowflake
           cp config.toml ~/.snowflake/config.toml
-          # Remove any existing password line to avoid duplicates
-          sed -i '/^password =/d' ~/.snowflake/config.toml
-          # Append password line with variable expanded
           echo "password = \"${SNOWFLAKE_PASSWORD}\"" >> ~/.snowflake/config.toml
           chmod 0600 ~/.snowflake/config.toml
       
