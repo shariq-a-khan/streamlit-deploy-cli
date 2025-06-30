@@ -1,0 +1,9 @@
+default_connection_name = "Test"
+
+[connections.Test]
+account = "IGMZPIJ-QO60009"
+user = "shariqakhan"
+database = "DP_REV_D"
+schema = "SUPP"
+warehouse = "SNOWFLAKE_LEARNING_WH"
+role = "SNOWFLAKE_LEARNING_ROLE"

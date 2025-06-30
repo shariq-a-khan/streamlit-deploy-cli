@@ -1,0 +1,13 @@
+definition_version: '2'
+entities:
+  streamlit_app:
+    type: streamlit
+    identifier:
+      name: streamlit_app
+    main_file: streamlit_app.py
+    query_warehouse: SNOWFLAKE_LEARNING_WH
+    stage: DBT_STAGE
+    artifacts:
+      - streamlit_app.py
+      - environment.yml
+
