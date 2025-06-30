@@ -35,12 +35,6 @@ jobs:
           cp config.toml ~/.snowflake/config.toml
           echo "password = \"${SNOWFLAKE_PASSWORD}\"" >> ~/.snowflake/config.toml
           chmod 0600 ~/.snowflake/config.toml
-      
-      - name: View Snowflake config.toml (for debugging)
-        run: |
-          echo "----- Snowflake config.toml contents -----"
-          cat ~/.snowflake/config.toml
-          echo "------------------------------------------"
 
       - name: Deploy the Streamlit app
         run: |
