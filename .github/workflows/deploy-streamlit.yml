@@ -33,10 +33,7 @@ jobs:
         run: |
           mkdir -p ~/.snowflake
           cp config.toml ~/.snowflake/config.toml
-          # Remove existing password line if any
-          sed -i '/^password =/d' ~/.snowflake/config.toml
-          # Append password with variable expanded
-          echo "password = \"${SNOWFLAKE_PASSWORD}\"" >> ~/.snowflake/config.toml
+          echo 'password = "${SNOWFLAKE_PASSWORD}"' >> ~/.snowflake/config.toml
           chmod 0600 ~/.snowflake/config.toml
       
       - name: View Snowflake config.toml (for debugging)
